@@ -12,5 +12,6 @@ RUN curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.11.1/kind-linux-amd64 \
 RUN curl -L -o kubebuilder https://go.kubebuilder.io/dl/latest/$(go env GOOS)/$(go env GOARCH) \
 	&& chmod +x kubebuilder \ 
 	&& mv kubebuilder /usr/local/bin/
+COPY start.sh start.sh
 WORKDIR /
-CMD ["/bin/sh"]
+CMD ["/start.sh"]
